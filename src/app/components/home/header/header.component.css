@@ -1,0 +1,76 @@
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414; /* Fond sombre pour un look Netflix-like */
+  padding: 20px;
+  color: rgb(10, 10, 10);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-image: url('https://images.pexels.com/photos/65128/pexels-photo-65128.jpeg?auto=compress&cs=tinysrgb&w=600');
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.header h1 {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  color: rgb(253, 38, 0);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar li {
+  font-size: 1.2rem;
+}
+
+.navbar a {
+  color: rgb(10, 10, 10);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e50914; /* Rouge Netflix-like */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-bar input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: white;
+  width: 250px;
+}
+
+.search-bar button {
+  background-color: #e50914;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #f40612;
+}

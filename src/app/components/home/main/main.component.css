@@ -1,0 +1,124 @@
+/* Container principal */
+.container {
+  background-color: rgba(20, 20, 20, 0.85); /* Fond noir transparent */
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1200px;
+  color: #e5e5e5; /* Texte gris clair comme Netflix */
+  background-image: url('https://images.pexels.com/photos/31567532/pexels-photo-31567532/free-photo-of-interieur-de-theatre-vintage-elegant-avec-decor-orne.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load');
+  background-repeat:no-repeat;
+  background-position: center;
+  z-index: 10px;
+  background-size: cover;
+
+}
+
+/* Barre de recherche */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: white;
+}
+
+input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #e50914; /* Rouge Netflix */
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f40612; /* Rouge plus clair au hover */
+}
+
+/* Section résultats */
+.section-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+/* Résultats de films */
+.results, .carousel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Cartes de films */
+.movie-card, .card {
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.movie-card:hover, .card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img, .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 10px;
+  color: #e5e5e5;
+}
+
+/* Carousel navigation */
+.prev, .next {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 100;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Message d'erreur */
+.error-message {
+  color: #e50914;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}

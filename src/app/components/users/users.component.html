@@ -1,0 +1,29 @@
+<!-- users.component.html - Version simple améliorée -->
+<div class="users-container">
+  <h1 class="users-title">Liste des utilisateurs</h1>
+
+  <!-- État de chargement -->
+  <div *ngIf="loading" class="loading">
+    Chargement des utilisateurs...
+  </div>
+
+  <!-- État d'erreur -->
+  <div *ngIf="error" class="error">
+    Erreur : {{ error }}
+  </div>
+
+  <!-- Liste des utilisateurs -->
+  <ul class="users-list" *ngIf="!loading && !error">
+    <li class="user-item" *ngFor="let user of users">
+      <div class="user-info">
+        <span class="user-name">{{ user.prenom }} {{ user.nom }}</span>
+        <span class="user-email">{{ user.email }}</span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Message si aucun utilisateur -->
+  <div *ngIf="!loading && !error && users.length === 0" class="no-users">
+    Aucun utilisateur trouvé
+  </div>
+</div>

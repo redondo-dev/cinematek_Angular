@@ -1,0 +1,18 @@
+<div class="upcoming-container">
+  <h2>Films à venir</h2>
+
+  <div *ngIf="loading">Chargement en cours...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="upcoming-grid" *ngIf="upcomingMovies.length > 0">
+    <div class="movie-card" *ngFor="let movie of upcomingMovies">
+      <img [src]="movie.poster" [alt]="movie.name">
+      <div class="info">
+        <h3>{{ movie.name }}</h3>
+        <p>Sortie prévue : {{ movie.year }}</p>
+        <a [href]="movie.url" target="_blank">Voir sur IMDb</a>
+      </div>
+    </div>
+  </div>
+</div>
+

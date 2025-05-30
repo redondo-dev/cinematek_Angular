@@ -1,0 +1,40 @@
+<div *ngIf="movie; else errorTpl" class="movie-detail-container">
+
+  <img [src]="movie.poster" [alt]="movie.name" class="poster">
+
+  <div class="movie-info">
+    <h1>{{ movie.name }}</h1>
+    <p><strong>Note IMDb :</strong> {{ movie.rating.ratingValue }} / 10 ({{ movie.rating.ratingCount }} votes)</p>
+    <p><strong>Genre :</strong> {{ movie.genre }}</p>
+    <p><strong>Date de sortie :</strong> {{ movie.datePublished }}</p>
+    <p><strong>Durée :</strong> {{ movie.duration }}</p>
+    <p><strong>Classification :</strong> {{ movie.contentRating }}</p>
+    <p><strong>Mots-clés :</strong> {{ movie.keywords }}</p>
+    <h3>Acteurs</h3>
+    <ul>
+      <li *ngFor="let actor of movie.actor">
+        <a [href]="actor.url" target="_blank">{{ actor.name }}</a>
+      </li>
+    </ul>
+
+  </div>
+  <div class="critique">
+    <h3>Description</h3>
+    <p>{{ movie.description }}</p>
+    <h3>Critique</h3>
+    <p><strong>{{ movie.review.author }}</strong> - <em>{{ movie.review.dateCreated }}</em></p>
+    <p><strong>{{ movie.review.heading }}</strong></p>
+    <p>{{ movie.review.reviewBody }}</p>
+    <p><strong>Note :</strong> {{ movie.review.reviewRating.ratingValue }} / {{ movie.review.reviewRating.bestRating
+      }}
+    </p>
+
+    <p>
+      <a [href]="movie.url" target="_blank">Voir sur IMDb</a>
+    </p>
+  </div>
+</div>
+
+<ng-template #errorTpl>
+  <p class="error-message">{{ error || 'Film non trouvé.' }}</p>
+</ng-template>

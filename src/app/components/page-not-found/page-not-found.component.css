@@ -1,0 +1,56 @@
+
+
+.container {
+  margin :0 auto;
+  width: 100%;
+  max-width: 1200px;
+ height:fit-content;
+  background-color: #dc9292;
+}
+
+
+
+.text {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.text h1 {
+  font-size: 80px;
+  color: #ff6347;
+}
+
+.text h2 {
+  font-size: 30px;
+  color: #333;
+}
+
+.text p {
+  font-size: 18px;
+  color: #666;
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.button-container{
+  
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <form (ngSubmit)="onReserve()" class="form-box">
+    <h2>Réservation</h2>
+
+    <label>Nom</label>
+    <input [(ngModel)]="name" name="name" required />
+
+    <label>Utilisateur</label>
+    <select [(ngModel)]="user_id" name="user_id" required>
+      <option value="" disabled selected>Choisir un utilisateur</option>
+      <option *ngFor="let user of users" [value]="user.id">
+        {{ user.name }}
+      </option>
+    </select>
+
+    <label>Film</label>
+    <select [(ngModel)]="film_id" name="film_id" required>
+      <option value="" disabled selected>Choisir un film</option>
+      <option *ngFor="let film of films" [value]="film.id">
+        {{ film.title }}
+      </option>
+    </select>
+
+    <label>Date</label>
+    <input type="date" [(ngModel)]="date" name="date" required />
+
+    <label>Nombre de places</label>
+    <input type="number" [(ngModel)]="seats" name="seats" min="1" required />
+
+    <button type="submit">Réserver</button>
+  </form>
+</div>

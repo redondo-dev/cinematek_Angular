@@ -1,0 +1,14 @@
+
+@import "tailwindcss";
+/* Ensure Tailwind CSS is properly configured */
+
+html,body{
+  /* background-image: url('https://images.pexels.com/photos/7991486/pexels-photo-7991486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover; */
+
+}
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
