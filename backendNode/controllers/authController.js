@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 
 //register
 const register = async (req, res) => {
-  const { nom, prenom, email, password } = req.body;
+  const { nom, prenom, email, password,role  } = req.body;
 
   // Vérifier que tous les champs sont présents
   if (!nom || !prenom || !email || !password) {
@@ -15,7 +15,7 @@ const register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log("Mot de passe hashé :", hashedPassword);
 
-  userModel.createUser({ nom, prenom, email, password:hashedPassword }, (err, result) => {
+  userModel.createUser({ nom, prenom, email, password:hashedPassword ,role:role||'user'}, (err, result) => {
     if (err) {
       console.error("Erreur SQL :", err);
       return res.status(500).json({ error: "Erreur lors de l'inscription" });
@@ -56,7 +56,7 @@ const login = (req, res) => {
       if (isMatch) {
         // Sécurisation avec JWT
         const token = jwt.sign(
-          { id: user.id, email: user.email },
+          { id: user.id, email: user.email, role: user.role },
           process.env.JWT_SECRET,
           { expiresIn: "1h" }
         );

@@ -19,13 +19,18 @@ export default class LoginComponent {
 
   login() {
     this.http
-      .post('http://localhost:3000/login', {
-        email: this.email,
-        password: this.password,
-      })
+      .post(
+        'http://localhost:3000/login',
+        {
+          email: this.email,
+          password: this.password,
+        },
+        { withCredentials: true }
+      )
       .subscribe({
         next: (res: any) => {
           console.log('conexion reussie');
+          localStorage.setItem('token', 'true');
           this.router.navigate(['/home']);
         },
         error: (err: any) => {

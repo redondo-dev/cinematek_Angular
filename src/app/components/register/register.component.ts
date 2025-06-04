@@ -32,6 +32,7 @@ export default class RegisterComponent {
       prenom: this.prenom,
       email: this.email,
       password: this.password,
+      Role:'admin'
     };
 
     this.Http.post('http://localhost:3000/register', data).subscribe({

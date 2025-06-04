@@ -19,7 +19,10 @@ export const routes: Routes = [
   },
   {
     path: 'users',
-    loadComponent: () => import('./components/users/users.component').then(m => m.UsersComponent),
+    loadComponent: () =>
+      import('./components/users/users.component').then(
+        (m) => m.UsersComponent
+      ),
   },
 
   {
@@ -28,7 +31,6 @@ export const routes: Routes = [
       import('./components/upcoming-movies/upcoming-movies.component'),
     canActivate: [authGuard],
   },
-
 
   {
     path: 'movies/:id',
@@ -52,6 +54,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '404',
+    redirectTo: 'login',
   },
 ];

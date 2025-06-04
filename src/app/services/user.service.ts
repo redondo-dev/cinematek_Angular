@@ -20,6 +20,7 @@ export class UserService {
 
   // Récupérer la liste des utilisateurs
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${this.apiUrl}/users`);
+    return this.http.get<User[]>(`${this.apiUrl}/users`,
+      {withCredentials: true},);
   }
 }

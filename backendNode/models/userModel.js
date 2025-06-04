@@ -1,9 +1,9 @@
 const db = require('../config/db');
 
 const createUser = (user, callback) => {
-  const { nom, prenom, email, password:hashedPassword } = user;
-  const sql = "INSERT INTO users (nom, prenom, email, password) VALUES (?, ?, ?, ?)";
-  db.query(sql, [nom, prenom, email, hashedPassword], callback);
+  const { nom, prenom, email, password:hashedPassword ,role} = user;
+  const sql = "INSERT INTO users (nom, prenom, email, password, role) VALUES (?, ?, ?, ?, ?)";
+  db.query(sql, [nom, prenom, email, hashedPassword, role], callback);
 };
 
 
@@ -20,7 +20,7 @@ const findUserByEmail = (email, callback) => {
   db.query(sql, [email], (err, results) => {
     if (err) return callback(err);
     if (results.length === 0) return callback(null, null);
-    callback(null, results[0]); // retourne l'utilisateur trouvé
+    callback(null, results[0]);
   });
 };
 
